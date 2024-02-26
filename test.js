@@ -4,4 +4,7 @@ const testFn = () => {
   return 989102094;
 }
 
-Deno.serve((req) => new Response(testFn(););
+Deno.serve((req) => {
+  const res = testFn();
+  return new Response(res);
+});
